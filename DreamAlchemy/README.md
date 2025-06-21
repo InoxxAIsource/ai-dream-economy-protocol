@@ -153,8 +153,6 @@ npm run dev
 
 ## 🌐 Deployment
 
-### Frontend Deployment
-The application is configured for deployment on Replit with automatic builds and port management.
 
 ### Smart Contract Deployment
 Contracts are deployed using Hardhat with verification on block explorers:
@@ -189,7 +187,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🔗 Links
 
-- [Live Demo](https://your-replit-deployment-url.replit.app)
+
 - [Smart Contracts](https://testnet.bscscan.com/address/0xe04879E0Dbf549567F535c7EB9d997A2769119cF)
 - [Documentation](./docs/)
 - [API Reference](./docs/api.md)
@@ -198,7 +196,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Anthropic for Claude AI integration
 - OpenAI for DALL-E artwork generation
-- Replit for hosting and deployment
+- AWS/ for hosting and deployment
 - BSC ecosystem for blockchain infrastructure
 
 ---
