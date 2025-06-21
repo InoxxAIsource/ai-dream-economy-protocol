@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Dark theme as default */
+  --background: hsl(252, 100%, 4%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(252, 67%, 15%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(252, 100%, 4%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(252, 67%, 8%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(258, 84%, 66%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(252, 67%, 15%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(252, 67%, 15%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(258, 84%, 66%);
+  --radius: 0.5rem;
+  
+  /* Dream Economy Custom Colors */
+  --space-dark: hsl(252, 100%, 4%);
+  --space-purple: hsl(252, 67%, 15%);
+  --ethereal-purple: hsl(258, 84%, 66%);
+  --dream-blue: hsl(215, 82%, 61%);
+  --mystical-pink: hsl(325, 84%, 61%);
+  --gold-accent: hsl(43, 89%, 56%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, var(--space-dark) 0%, var(--space-purple) 100%);
+    min-height: 100vh;
+    color: white;
+  }
+
+  html {
+    background: linear-gradient(135deg, var(--space-dark) 0%, var(--space-purple) 100%);
+    min-height: 100vh;
+  }
+
+  #root {
+    background: linear-gradient(135deg, var(--space-dark) 0%, var(--space-purple) 100%);
+    min-height: 100vh;
+  }
+
+  /* Ensure all page containers have proper dark background */
+  .min-h-screen, .min-h-full {
+    background: linear-gradient(135deg, var(--space-dark) 0%, var(--space-purple) 100%);
+  }
+
+  /* Fix white backgrounds on all components */
+  div, main, section, article {
+    background-color: transparent;
+  }
+
+  /* Ensure tab content areas have dark backgrounds */
+  [data-state="active"] {
+    background: transparent;
+  }
+
+  /* Override any remaining white backgrounds */
+  .bg-white, .bg-background {
+    background: transparent !important;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .aurora-gradient {
+    background: linear-gradient(45deg, 
+      hsla(258, 84%, 66%, 0.3) 0%, 
+      hsla(215, 82%, 61%, 0.3) 25%, 
+      hsla(325, 84%, 61%, 0.3) 50%, 
+      hsla(43, 89%, 56%, 0.3) 75%);
+  }
+  
+  .dream-glow {
+    box-shadow: 0 0 30px hsla(258, 84%, 66%, 0.3);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(45deg, 
+      hsl(258, 84%, 66%), 
+      hsl(215, 82%, 61%), 
+      hsl(325, 84%, 61%), 
+      hsl(43, 89%, 56%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .nav-active {
+    background: linear-gradient(45deg, 
+      hsla(258, 84%, 66%, 0.3), 
+      hsla(215, 82%, 61%, 0.3));
+    box-shadow: 0 0 20px hsla(258, 84%, 66%, 0.5);
+  }
+  
+  .floating {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+  
+  .aurora-text {
+    background: linear-gradient(45deg, 
+      hsl(258, 84%, 66%), 
+      hsl(215, 82%, 61%), 
+      hsl(325, 84%, 61%), 
+      hsl(43, 89%, 56%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: aurora-shift 3s ease-in-out infinite;
+  }
+  
+  .dream-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .dream-shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: shimmer 2s infinite;
+  }
+  
+  .ethereal-border {
+    border: 1px solid transparent;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(59, 130, 246, 0.3), rgba(236, 72, 153, 0.3)) border-box;
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  }
+  
+  .category-tag {
+    background: linear-gradient(45deg, 
+      hsla(258, 84%, 66%, 0.2), 
+      hsla(215, 82%, 61%, 0.2));
+    border: 1px solid hsla(258, 84%, 66%, 0.4);
+  }
+  
+  .mood-indicator {
+    transition: all 0.3s ease;
+  }
+  
+  .mood-indicator:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+@keyframes pulse-glow {
+  from { 
+    box-shadow: 0 0 20px hsla(258, 84%, 66%, 0.4); 
+  }
+  to { 
+    box-shadow: 0 0 40px hsla(258, 84%, 66%, 0.8); 
+  }
+}
+
+@keyframes aurora-shift {
+  0%, 100% { 
+    background-position: 0% 50%; 
+  }
+  50% { 
+    background-position: 100% 50%; 
+  }
+}
+
+@keyframes shimmer {
+  0% { 
+    left: -100%; 
+  }
+  100% { 
+    left: 100%; 
+  }
+}
